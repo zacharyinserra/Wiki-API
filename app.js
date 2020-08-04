@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect("mongodb://localhost:27017/WikiDB", {
+mongoose.connect("mongodb+srv://zac:nonsense66@todolist-v2.nwiqg.mongodb.net/wikiDB", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 })
@@ -117,6 +117,6 @@ app.route("/articles/:articleTitle")
     );
   });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
